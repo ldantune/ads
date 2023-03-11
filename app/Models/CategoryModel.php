@@ -35,11 +35,22 @@ class CategoryModel extends MyBaseModel
     protected function generateSlug(array $data): array
     {
         if(isset($data['data']['name'])){
-
             $data['data']['slug'] = mb_url_title($data['data']['name'], "-", true);
+        }
+        return $data;
+    }
 
+    public function getParentCategories(int $exceptCategoryID = null): array
+    {
+        $builder = $this;
+
+        if($exceptCategoryID){
+            $builder->where('id !=', $exceptCategoryID);
         }
 
-        return $data;
+        $builder->orderBy('name', 'ASC');
+        $builder->asArray();
+
+        return $builder->findAll();
     }
 }
