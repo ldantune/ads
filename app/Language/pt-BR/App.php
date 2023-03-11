@@ -29,7 +29,8 @@ return [
   'sidebar' => [
     'manager' => [
       'home' => 'Home',
-      'categories' => 'Categorias'
+      'categories' => 'Categorias',
+      'plans' => 'Planos'
     ],
   ],
 ];

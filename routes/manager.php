@@ -1,11 +1,12 @@
 <?php
 
 $routes->group('{locale}/manager', ['namespace' => 'App\Controllers\Manager'], function ($routes) {
-  
+
   $routes->get('/', 'ManagerController::index', ['as' => 'manager']);
 
+  //Categories
   $routes->group('categories', function ($routes) {
-  
+
     $routes->get('/', 'CategoriesController::index', ['as' => 'categories']);
     $routes->get('archived', 'CategoriesController::archived', ['as' => 'categories.archived']);
     $routes->get('get-all', 'CategoriesController::getAllCategories', ['as' => 'categories.get.all']);
@@ -20,4 +21,19 @@ $routes->group('{locale}/manager', ['namespace' => 'App\Controllers\Manager'], f
     $routes->delete('delete', 'CategoriesController::delete', ['as' => 'categories.delete']);
   });
 
+  //Plans
+  $routes->group('plans', function ($routes) {
+
+    $routes->get('/', 'PlansController::index', ['as' => 'plans']);
+    $routes->get('archived', 'PlansController::archived', ['as' => 'plans.archived']);
+    $routes->get('get-all', 'PlansController::getAllPlans', ['as' => 'plans.get.all']);
+    $routes->get('get-all-archived', 'PlansController::getAllArchivedPlans', ['as' => 'plans.get.all.archived']);
+    $routes->get('get-info', 'PlansController::getPlanInfo', ['as' => 'plans.get.info']);
+
+    $routes->post('create', 'PlansController::create', ['as' => 'plans.create']);
+    $routes->put('update', 'PlansController::update', ['as' => 'plans.update']);
+    $routes->put('archive', 'PlansController::archive', ['as' => 'plans.archive']);
+    $routes->put('recover', 'PlansController::recover', ['as' => 'plans.recover']);
+    $routes->delete('delete', 'PlansController::delete', ['as' => 'plans.delete']);
+  });
 });

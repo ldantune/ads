@@ -29,7 +29,7 @@ class CategoryService
           'id' => 'updateCategoryBtn',
           'class' => 'btn btn-primary btn-sm'
         ],
-        'Editar'
+        lang('App.btn_edit')
       );
 
       $btnArchive = form_button(
@@ -38,7 +38,7 @@ class CategoryService
           'id' => 'archiveCategoryBtn',
           'class' => 'btn btn-info btn-sm'
         ],
-        'Arquivar'
+        lang('App.btn_archive')
       );
 
       $data[] = [
