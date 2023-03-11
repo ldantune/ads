@@ -40,6 +40,27 @@ class CategoriesController extends BaseController
 
         return $this->response->setJSON($response);
     }
+    public function archived()
+    {
+        $data = [
+            'title' => 'Categorias arquivadas'
+        ];
+
+        return view('Manager/Categories/archived', $data);
+    }
+
+    public function getAllArchivedCategories()
+    {
+        if (!$this->request->isAJAX()) {
+            return redirect()->back();
+        }
+
+        $response = [
+            'data' => $this->categoryService->getAllArchivedCategories()
+        ];
+
+        return $this->response->setJSON($response);
+    }
 
     public function getCategoryInfo()
     {
@@ -66,7 +87,6 @@ class CategoriesController extends BaseController
     public function create()
     {
         $this->categoryRequest->validateBeforeSave('category');
-
 
         $category = new Category($this->removeSpoofingFromRequest());
 
@@ -112,5 +132,19 @@ class CategoriesController extends BaseController
         ];
 
         return $this->response->setJSON($response);
+    }
+
+    public function recover()
+    {
+        $this->categoryService->tryRecoverCategory($this->request->getGetPost('id'));
+
+        return $this->response->setJSON($this->categoryRequest->respondWithMessage(message: 'Categoria recuperada com sucesso!'));
+    }
+
+    public function delete()
+    {
+        $this->categoryService->tryDeleteCategory($this->request->getGetPost('id'));
+
+        return $this->response->setJSON($this->categoryRequest->respondWithMessage(message: 'Categoria excluida com sucesso!'));
     }
 }

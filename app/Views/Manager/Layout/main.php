@@ -13,7 +13,16 @@
         <link href="<?php echo site_url('manager_assets/'); ?>css/styles.css" rel="stylesheet" />
         <link href="<?php echo site_url('manager_assets/toastr/'); ?>toastr.min.css" rel="stylesheet"/>
         <?php echo $this->renderSection('styles'); ?>
+
+        
     </head>
+
+    <style>
+        .dataTables_scrollHeadInner,
+        .table {
+            width: 100% !important;
+        }
+    </style>
     <body>
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
@@ -64,6 +73,8 @@
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!-- Core theme JS-->
         <script src="<?php echo site_url('manager_assets/'); ?>js/scripts.js"></script>
         <script src="<?php echo site_url('manager_assets/toastr/'); ?>toastr.min.js"></script>

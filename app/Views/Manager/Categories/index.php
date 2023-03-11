@@ -23,6 +23,8 @@
       </div>
 
       <div class="card-body">
+
+      <a class="btn btn-info btn-sm mt-2 mb-4" href="<?php echo route_to('categories.archived');?>">Categorias arquivadas</a>
         <table class="table table" id="dataTable">
           <thead>
             <tr>
