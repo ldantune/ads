@@ -6,7 +6,7 @@
         <meta name="description" content="" />
         <meta name="author" content="Lucas Antunes" />
         <meta name="<?php echo csrf_token(); ?>" content="<?php echo csrf_hash(); ?>" class="csrf" />
-        <title><?php echo $this->renderSection('title'); ?> <?php echo ' - ' . env('APP_NAME') ?> </title>
+        <title><?php echo lang('Categories.title_index'); ?> <?php echo ' - ' . env('APP_NAME') ?> </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="<?php echo site_url('manager_assets/'); ?>assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -29,12 +29,8 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light"><?php echo env('APP_NAME') ?></div>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?php echo route_to('manager'); ?>">Dashboard</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?php echo route_to('categories') ?>">Categorias</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?php echo route_to('manager'); ?>"><?php echo lang('App.sidebar.manager.home') ?></a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?php echo route_to('categories') ?>"><?php echo lang('App.sidebar.manager.categories') ?></a>
                 </div>
             </div>
             <!-- Page content wrapper-->

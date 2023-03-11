@@ -22,7 +22,7 @@
 
       <div class="card-body">
 
-      <a class="btn btn-primary btn-sm mt-2 mb-4" href="<?php echo route_to('categories');?>">Voltar</a>
+      <a class="btn btn-primary btn-sm mt-2 mb-4" href="<?php echo route_to('categories');?>"><?php echo lang('App.btn_back'); ?></a>
         <table class="table table" id="dataTable">
           <thead>
             <tr>

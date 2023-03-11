@@ -1,5 +1,5 @@
 <script>
-  $(document).on('click', '#archiveCategoryBtn', function() {
+  $(document).on('click', '#archiverCategoryBtn', function() {
     var id = $(this).data('id');
 
     var url = '<?php echo route_to('categories.archive'); ?>';
