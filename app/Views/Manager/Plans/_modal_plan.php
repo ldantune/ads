@@ -37,7 +37,7 @@
 
           <div class="mb-3">
             <label for="description" class="form-label"><?php echo lang('Plans.label_description'); ?></label>
-            <textarea name="description" rows="3" placeholder="<?php echo lang('Plans.label_description'); ?>"></textarea>
+            <textarea class="form-control" name="description" rows="3" placeholder="<?php echo lang('Plans.label_description'); ?>"></textarea>
             <span class="text-danger error-text description"></span>
           </div>
         </div>

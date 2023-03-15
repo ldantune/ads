@@ -30,7 +30,7 @@ return [
     'manager' => [
       'home' => 'Home',
       'categories' => 'Categorias',
-      'plans' => 'Planos'
+      'plans' => 'Planos de Assinaturas'
     ],
   ],
 ];

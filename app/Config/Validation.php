@@ -57,4 +57,33 @@ class Validation extends BaseConfig
             'is_unique'     => 'Categories.name.is_unique',
         ]
     ];
+
+    // --------------------------------------------------------------------
+    // Plans
+    // --------------------------------------------------------------------
+    public $plan = [
+        'name'     => 'required|min_length[3]|max_length[90]|is_unique[plans.name,id,{id}]',
+        'recorrence'     => 'required|in_list[monthly,quarterly,semester,yearly]',
+        'value'     => 'required',
+        'description'     => 'required',
+    ];
+
+    public $plan_errors = [
+        'name' => [
+            'required'      => 'Plans.name.required',
+            'min_length'    => 'Plans.name.min_length',
+            'max_length'    => 'Plans.name.max_length',
+            'is_unique'     => 'Plans.name.is_unique',
+        ],
+        'recorrence' => [
+            'required'      => 'Plans.recorrence.required',
+            'in_list'    => 'Plans.recorrence.min_length',
+        ],
+        'value' => [
+            'required'      => 'Plans.recorrence.required',
+        ],
+        'description' => [
+            'required'      => 'Plans.recorrence.required',
+        ]
+    ];
 }

@@ -1,7 +1,7 @@
 <script>
-  $('#categories-form').submit(function(e) {
+  $('#plans-form').submit(function(e) {
     e.preventDefault();
-
+    
     var form = this;
 
     $.ajax({
@@ -19,7 +19,7 @@
         window.refreshCSRFToken(response.token);
 
         if(response.success == false){
-          toastr.error('Verifique os erros e tente novamente')
+          toastr.error('<?php echo lang('App.danger_validations'); ?>')
           $.each(response.errors, function(field, valeu){
             $(form).find('span.' + field).text(valeu);
           });
@@ -28,15 +28,15 @@
         }
 
         toastr.success(response.message)
-        $('#categoryModal').modal('hide');
+        $('#modalPlan').modal('hide');
 
         $(form)[0].reset();
 
         $('#dataTable').DataTable().ajax.reload(null, false);
+        
+        $('.modal-title').text('<?php echo lang('Plans.title_new'); ?>');
 
-        $('.modal-title').text('Criar categoria');
-
-        $(form).attr('action', '<?php echo route_to('categories.create');?>');
+        $(form).attr('action', '<?php echo route_to('plans.create');?>');
         $(form).find('input[name="id"]').val('');
         $('input[name="_method"]').remove();
       },

@@ -11,6 +11,11 @@ class Plan extends Entity
     private const INTERVAL_SEMESTER = 6; //Semestral
     private const INTERVAL_YEARLY = 12; //Anual
 
+    public const OPTION_MONTHLY = 'monthly'; //Mensal
+    public const OPTION_QUARTERLY = 'quarterly'; // Trimestral
+    public const OPTION_SEMESTER = 'semester'; //Semestral
+    public const OPTION_YEARLY = 'yearly'; //Anual
+
     protected $dates   = ['created_at', 'updated_at', 'deleted_at'];
     protected $casts   = [
         'plan_id' => 'interger',

@@ -56,9 +56,10 @@
 <script src="<?php echo site_url('manager_assets/mask/'); ?>jquery.mask.min.js"></script>
 
 <?php echo $this->include('Manager/Plans/Scripts/_datatable_all'); ?>
+<?php echo $this->include('Manager/Plans/Scripts/_submit_modal_create_update'); ?>
+<?php echo $this->include('Manager/Plans/Scripts/_show_modal_create'); ?>
+
 <?php //echo $this->include('Manager/Plans/Scripts/_get_category_info'); ?>
-<?php //echo $this->include('Manager/Plans/Scripts/_submit_modal_create_update'); ?>
-<?php //echo $this->include('Manager/Plans/Scripts/_show_modal_create'); ?>
 <?php //echo $this->include('Manager/Plans/Scripts/_archive_category'); ?>
 
 <script>
