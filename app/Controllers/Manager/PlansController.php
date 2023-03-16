@@ -60,6 +60,34 @@ class PlansController extends BaseController
 
         return $this->response->setJSON($this->planRequest->respondWithMessage(message: lang('App.success_saved')));
     }
+
+    public function getPlanInfo()
+    {
+        if (!$this->request->isAJAX()) {
+            return redirect()->back();
+        }
+
+        $plan = $this->planService->getPlanById($this->request->getGetPost('id'));
+
+        $response = [
+            'plan' => $plan,
+            'recorrences' => $this->planService->getRecorrences($plan->recorrence)
+        ];
+
+        return $this->response->setJSON($response);
+    }
     
+    public function update()
+    {
+        $this->planRequest->validateBeforeSave('plan');
+
+        $plan = $this->planService->getPlanById($this->request->getGetPost('id'));
+
+        $plan->fill($this->removeSpoofingFromRequest());
+
+        $this->planService->trySavePlan($plan);
+
+        return $this->response->setJSON($this->planRequest->respondWithMessage(message: lang('App.success_saved')));
+    }
 
 }

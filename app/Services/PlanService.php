@@ -68,12 +68,20 @@ class PlanService
     ];
 
     //Estou criando um plano?
-    if(is_null($recorrence)){
+    if (is_null($recorrence)) {
       return form_dropdown('recorrence', $options, $selected, ['class' => 'form-control']);
     }
 
     //Estamos efetivamente editando um plano....
+    $selected[] = match ($recorrence) {
+      Plan::OPTION_MONTHLY    => Plan::OPTION_MONTHLY,
+      Plan::OPTION_QUARTERLY  => Plan::OPTION_QUARTERLY,
+      Plan::OPTION_SEMESTER   => Plan::OPTION_SEMESTER,
+      Plan::OPTION_YEARLY     => Plan::OPTION_YEARLY,
+      default => throw new \InvalidArgumentException("Unsupported {$recorrence}")
+    };
 
+    return form_dropdown('recorrence', $options, $selected, ['class' => 'form-control']);
   }
 
   public function trySavePlan(Plan $plan, bool $protect = true)
@@ -83,7 +91,9 @@ class PlanService
       //TODO: gerenciar a criação/atulização na gerencianet
 
       if ($plan->hasChanged()) {
-
+        if($plan->is_highlighted == 1){
+          $plan->is_highlighted = true;
+        }
         $this->planModel->protect($protect)->save($plan);
       }
     } catch (\Exception $e) {
@@ -91,5 +101,16 @@ class PlanService
       //die("Erro ao salvar os dados da categoria");
       die($e->getMessage());
     }
+  }
+
+  public function getPlanById(int $id, bool $withDeleted = false)
+  {
+    $plan = $this->planModel->withDeleted($withDeleted)->find($id);
+
+    if (is_null($plan)) {
+      throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Plan not found');
+    }
+
+    return $plan;
   }
 }

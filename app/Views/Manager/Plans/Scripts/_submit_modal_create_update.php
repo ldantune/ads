@@ -3,7 +3,7 @@
     e.preventDefault();
     
     var form = this;
-
+    
     $.ajax({
       url: $(form).attr('action'),
       method: $(form).attr('method'),

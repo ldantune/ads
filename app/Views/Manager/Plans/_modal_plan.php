@@ -44,7 +44,8 @@
 
         <div class="form-check form-switch">
           <?php echo form_hidden('is_highlighted', 0); ?>
-          <input type="checkbox" class="form-check-input" id="is_highlighted">
+
+          <input type="checkbox" name="is_highlighted" class="form-check-input" id="is_highlighted">
           <label for="is_highlighted" class="form-check-label"><?php echo lang('Plans.label_is_highlighted'); ?></label>
         </div>
 
