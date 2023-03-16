@@ -4,6 +4,7 @@
 
 return [
     'title_index' => 'Listado de planes',
+    'title_archived' => 'Listado de planes archivados',
     'title_new' => 'Creando un nuevo plan',
     'title_edit' => 'Editando el Plan',
     'text_monthly' => 'Mensual',

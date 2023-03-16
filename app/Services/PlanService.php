@@ -16,7 +16,7 @@ class PlanService
     $this->planModel = Factories::models(PlanModel::class);
   }
 
-  public function getAllPlans()
+  public function getAll()
   {
     $plans = $this->planModel->findAll();
 
@@ -48,6 +48,44 @@ class PlanService
         'is_highlighted' => $plan->isHighlighted(),
         'details' => $plan->details(),
         'actions' => $btnEdit . ' ' . $btnArchive
+      ];
+    }
+
+    return $data;
+  }
+
+  public function getAllArchived()
+  {
+    $plans = $this->planModel->onlyDeleted()->findAll();
+
+    $data = [];
+
+    foreach ($plans as $plan) {
+
+      $btnRecover = form_button(
+        [
+          'data-id' => $plan->id,
+          'id' => 'recoverPlanBtn',
+          'class' => 'btn btn-primary btn-sm'
+        ],
+        lang('App.btn_recover')
+      );
+
+      $btnDelete = form_button(
+        [
+          'data-id' => $plan->id,
+          'id' => 'deletePlanBtn',
+          'class' => 'btn btn-danger btn-sm'
+        ],
+        lang('App.btn_delete')
+      );
+
+      $data[] = [
+        'code' => $plan->plan_id,
+        'name' => $plan->name,
+        'is_highlighted' => $plan->isHighlighted(),
+        'details' => $plan->details(),
+        'actions' => $btnRecover . ' ' . $btnDelete
       ];
     }
 
@@ -112,5 +150,20 @@ class PlanService
     }
 
     return $plan;
+  }
+
+  public function tryArchivePlan(int $id)
+  {
+    try {
+
+      $plan = $this->getPlanById($id);
+
+      $this->planModel->delete($plan->id);
+
+    } catch (\Exception $e) {
+      //Logar os erros
+      //die("Erro ao salvar os dados da categoria");
+      die($e->getMessage());
+    }
   }
 }

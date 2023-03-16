@@ -1,7 +1,7 @@
 <?php echo $this->extend('Manager\Layout\main'); ?>
 
 <?php echo $this->section('title'); ?>
-<?php echo lang('Plans.title_index'); ?>
+<?php echo lang('Plans.title_archived'); ?>
 <?php echo $this->endSection(); ?>
 
 <?php echo $this->section('styles'); ?>
@@ -17,14 +17,12 @@
   <div class="col-md-12">
     <div class="card shadow-lg">
       <div class="card-header">
-        <h5 class="mt-4"><?php echo lang('Plans.title_index'); ?></h5>
-
-        <button class="btn btn-primary btn-sm float-end" id="createPlanBtn"><?php echo lang('App.btn_new'); ?></button>
+        <h5 class="mt-4"><?php echo lang('Plans.title_archived'); ?></h5>
       </div>
 
       <div class="card-body">
 
-      <a class="btn btn-info btn-sm mt-2 mb-4" href="<?php echo route_to('plans.archived');?>"><?php echo lang('App.btn_archived'); ?></a>
+      <a class="btn btn-info btn-sm mt-2 mb-4" href="<?php echo route_to('plans');?>"><?php echo lang('App.btn_back'); ?></a>
         <table class="table table" id="dataTable">
           <thead>
             <tr>
@@ -42,11 +40,6 @@
   </div>
 </div>
 
-<!-- Modal -->
-<?php echo $this->include('Manager/Plans/_modal_plan'); ?>
-
-
-
 <?php echo $this->endSection(); ?>
 
 
@@ -55,12 +48,9 @@
 <script src="<?php echo site_url('manager_assets/mask/'); ?>app.js"></script>
 <script src="<?php echo site_url('manager_assets/mask/'); ?>jquery.mask.min.js"></script>
 
-<?php echo $this->include('Manager/Plans/Scripts/_datatable_all'); ?>
-<?php echo $this->include('Manager/Plans/Scripts/_submit_modal_create_update'); ?>
-<?php echo $this->include('Manager/Plans/Scripts/_show_modal_create'); ?>
-<?php echo $this->include('Manager/Plans/Scripts/_get_plan_info'); ?>
-
-<?php echo $this->include('Manager/Plans/Scripts/_archive_plan'); ?>
+<?php echo $this->include('Manager/Plans/Scripts/_datatable_all_archived'); ?>
+<?php //echo $this->include('Manager/Plans/Scripts/_recover_plan'); ?>
+<?php //echo $this->include('Manager/Plans/Scripts/_delete_plan'); ?>
 
 <script>
   function refreshCSRFToken(token){

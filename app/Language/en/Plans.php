@@ -5,6 +5,7 @@
 
 return [
     'title_index' => 'Listing the plans',
+    'title_archived' => 'Listing Archived Plans',
     'title_new' => 'Creating a new plan',
     'title_edit' => 'Editing a plan',
     'text_monthly' => 'Monthly',

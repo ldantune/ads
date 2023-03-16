@@ -1,5 +1,5 @@
 <div class="modal fade" id="modalPlan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered ">
+  <div class="modal-dialog modal-lg modal-dialog-centered ">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel"><?php echo lang('Plans.title_new'); ?></h5>
@@ -23,13 +23,13 @@
           </div>
 
 
-          <div class="mb-3">
+          <div class="mb-3 col-6">
             <label for="value" class="form-label"><?php echo lang('Plans.label_value'); ?></label>
             <input type="text" class="form-control money" id="value" name="value">
             <span class="text-danger error-text value"></span>
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3 col-6">
             <label for="adverts" class="form-label"><?php echo lang('Plans.label_adverts'); ?></label>
             <input type="number" class="form-control " id="adverts" name="adverts">
             <span class="text-danger error-text adverts"></span>
