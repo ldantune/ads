@@ -166,4 +166,37 @@ class PlanService
       die($e->getMessage());
     }
   }
+
+  public function tryRecover(int $id)
+  {
+    try {
+
+      $plan = $this->getPlanById($id, withDeleted: true);
+
+      $plan->recover();
+
+      $this->planModel->protect(false)->save($plan);
+
+    } catch (\Exception $e) {
+      //Logar os erros
+      //die("Erro ao salvar os dados da categoria");
+      die($e->getMessage());
+    }
+  }
+
+  public function tryDelete(int $id){
+    try {
+
+      $plan = $this->getPlanById($id, withDeleted: true);
+
+      //TODO: deletar plano na gerencianet
+
+      $this->planModel->delete($plan->id, purge: true);
+
+    } catch (\Exception $e) {
+      //Logar os erros
+      //die("Erro ao salvar os dados da categoria");
+      die($e->getMessage());
+    }
+  }
 }

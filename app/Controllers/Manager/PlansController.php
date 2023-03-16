@@ -119,4 +119,26 @@ class PlansController extends BaseController
         return $this->response->setJSON($this->planRequest->respondWithMessage(message: lang('App.success_archived')));
     }
 
+    public function recover()
+    {
+        if (!$this->request->isAJAX()) {
+            return redirect()->back();
+        }
+
+        $this->planService->tryRecover($this->request->getGetPost('id'));
+
+        return $this->response->setJSON($this->planRequest->respondWithMessage(message: lang('App.success_recovered')));
+    }
+
+    public function delete()
+    {
+        if (!$this->request->isAJAX()) {
+            return redirect()->back();
+        }
+
+        $this->planService->tryDelete($this->request->getGetPost('id'));
+
+        return $this->response->setJSON($this->planRequest->respondWithMessage(message: lang('App.success_deleted')));
+    }
+
 }

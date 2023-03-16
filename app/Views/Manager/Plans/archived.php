@@ -49,8 +49,8 @@
 <script src="<?php echo site_url('manager_assets/mask/'); ?>jquery.mask.min.js"></script>
 
 <?php echo $this->include('Manager/Plans/Scripts/_datatable_all_archived'); ?>
-<?php //echo $this->include('Manager/Plans/Scripts/_recover_plan'); ?>
-<?php //echo $this->include('Manager/Plans/Scripts/_delete_plan'); ?>
+<?php echo $this->include('Manager/Plans/Scripts/_recover_plan'); ?>
+<?php echo $this->include('Manager/Plans/Scripts/_delete_plan'); ?>
 
 <script>
   function refreshCSRFToken(token){
