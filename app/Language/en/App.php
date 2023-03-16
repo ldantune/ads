@@ -11,6 +11,7 @@ return [
   'deleted_confirmation' => 'Are you sure of the deletion?',
   'info_deleted_confirmation' => 'This action cannot be reversed',
   'info_empty_data' => 'There is no data to display',
+  'danger_error' => 'An error occurred while saving the information. Try again.',
 
   //Links/buttons
   'btn_back' => 'To go back',

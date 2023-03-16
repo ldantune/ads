@@ -10,10 +10,12 @@ class PlanService
 {
 
   private $planModel;
+  private $gerencianetService;
 
   public function __construct()
   {
     $this->planModel = Factories::models(PlanModel::class);
+    $this->gerencianetService = Factories::class(GerencianetService::class);
   }
 
   public function getAll()
@@ -126,7 +128,7 @@ class PlanService
   {
     try {
 
-      //TODO: gerenciar a criação/atulização na gerencianet
+      $this->createOrUpdateOnGerencianet($plan);
 
       if ($plan->hasChanged()) {
         if($plan->is_highlighted == 1){
@@ -135,8 +137,7 @@ class PlanService
         $this->planModel->protect($protect)->save($plan);
       }
     } catch (\Exception $e) {
-      //Logar os erros
-      //die("Erro ao salvar os dados da categoria");
+      log_message('error', '[ERROR] {exception}', ['exception' => $e->getMessage()]);
       die($e->getMessage());
     }
   }
@@ -161,8 +162,7 @@ class PlanService
       $this->planModel->delete($plan->id);
 
     } catch (\Exception $e) {
-      //Logar os erros
-      //die("Erro ao salvar os dados da categoria");
+      log_message('error', '[ERROR] {exception}', ['exception' => $e->getMessage()]);
       die($e->getMessage());
     }
   }
@@ -178,8 +178,7 @@ class PlanService
       $this->planModel->protect(false)->save($plan);
 
     } catch (\Exception $e) {
-      //Logar os erros
-      //die("Erro ao salvar os dados da categoria");
+      log_message('error', '[ERROR] {exception}', ['exception' => $e->getMessage()]);
       die($e->getMessage());
     }
   }
@@ -189,14 +188,26 @@ class PlanService
 
       $plan = $this->getPlanById($id, withDeleted: true);
 
-      //TODO: deletar plano na gerencianet
+      $this->gerencianetService->deletePlan($plan->plan_id);
 
       $this->planModel->delete($plan->id, purge: true);
 
     } catch (\Exception $e) {
-      //Logar os erros
-      //die("Erro ao salvar os dados da categoria");
+
+      log_message('error', '[ERROR] {exception}', ['exception' => $e->getMessage()]);
       die($e->getMessage());
+      
+    }
+  }
+
+  private function createOrUpdateOnGerencianet(Plan $plan)
+  {
+    if(empty($plan->id)){
+      return $this->gerencianetService->createPlan($plan);
+    }
+
+    if($plan->hasChanged('name')){
+      return $this->gerencianetService->updatePlan($plan);
     }
   }
 }

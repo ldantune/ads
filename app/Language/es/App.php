@@ -11,6 +11,7 @@ return [
   'deleted_confirmation' => '¿Estás seguro de la eliminación?',
   'info_deleted_confirmation' => 'Esta acción no se puede revertir.',
   'info_empty_data' => 'No hay datos para mostrar',
+  'danger_error' => 'Ocurrió un error al guardar la información. Inténtalo de nuevo.',
 
   //Links/buttons
   'btn_back' => 'Atrás',

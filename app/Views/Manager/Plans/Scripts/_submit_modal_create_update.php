@@ -41,7 +41,7 @@
         $('input[name="_method"]').remove();
       },
       error: function(){
-        alert('Error backend');
+        toastr.error('<?php echo lang('App.danger_error'); ?>')
       }
     });
   });
