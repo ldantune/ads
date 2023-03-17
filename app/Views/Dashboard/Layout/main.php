@@ -7,15 +7,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <meta name="<?php echo csrf_token(); ?>" content="<?php echo csrf_hash(); ?>" class="csrf" />
   <title><?php echo $this->renderSection('title'); ?> <?php echo ' - ' . env('APP_NAME') ?> </title>
 
-  <!-- PLUGINS CSS STYLE -->
-  <!--
-  <link href="<?php //echo site_url('dashboard/'); 
-              ?>plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-  -->
   <!-- Bootstrap -->
   <link href="<?php echo site_url('web/'); ?>plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -31,20 +25,24 @@
   <link href="<?php echo site_url('web/'); ?>css/style.css" rel="stylesheet">
 
   <!-- FAVICON -->
-  <link href="<?php echo site_url('dashboard/'); ?><?php echo site_url('web/'); ?>img/favicon.png" rel="shortcut icon">
+  <link href="<?php echo site_url('web/'); ?>img/favicon.png" rel="shortcut icon">
+
+  <link href="<?php echo site_url('manager_assets/toastr/'); ?>toastr.min.css" rel="stylesheet" />
 
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+  <style>
+    .btn-sm {
+      padding: 6px 20px;
+      font-size: .875rem;
+      line-height: 1.5;
+      border-radius: .2rem;
+    }
+  </style>
+
   <?php echo $this->renderSection('styles'); ?>
 </head>
 
 <body class="body-wrapper">
-
 
   <section>
     <div class="container">
@@ -52,7 +50,7 @@
         <div class="col-md-12">
           <nav class="navbar navbar-expand-lg  navigation">
             <a class="navbar-brand" href="index.html">
-              <img src="<?php echo site_url('web/'); ?>images/logo.png" alt="">
+              <img src="images/logo.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -96,17 +94,16 @@
                 </li>
                 <li class="nav-item dropdown dropdown-slide">
                   <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Listing <span><i class="fa fa-angle-down"></i></span>
+                    <?php echo $language ?> <span><i class="fa fa-angle-down"></i></span>
                   </a>
                   <!-- Dropdown list -->
                   <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="<?php echo $urls->url_en ?>">English</a>
+                    <a class="dropdown-item" href="<?php echo $urls->url_es ?>">Españhol</a>
+                    <a class="dropdown-item" href="<?php echo $urls->url_pt_br ?>">Português Brasil</a>
                   </div>
                 </li>
               </ul>
-
               <ul class="navbar-nav ml-auto mt-10">
                 <?php if (!auth()->check()) : ?>
                   <li class="nav-item">
@@ -114,15 +111,6 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link login-button" href="<?php echo route_to('register') ?>">Registre-se</a>
-                  </li>
-
-                <?php else : ?>
-                  <li class="nav-item">
-                    <form method="POST" action="<?= route_to('logout') ?>">
-                      <?php echo csrf_field(); ?>
-                      <button class="nav-link login-button" href="#" type="submit">Sair</button>
-                    </form>
-
                   </li>
                 <?php endif; ?>
                 <li class="nav-item">
@@ -135,81 +123,44 @@
       </div>
     </div>
   </section>
-
-  <!--===============================
-=            Hero Area            =
-================================-->
-
-  <section class="hero-area bg-1 text-center overly">
-    <!-- Container Start -->
+  <section class="page-search">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <!-- Header Contetnt -->
-          <div class="content-block">
-            <h1>Buy & Sell Near You </h1>
-            <p>Join the millions who buy and sell from each other <br> everyday in local communities around the world</p>
-            <div class="short-popular-category-list text-center">
-              <h2>Popular Category</h2>
-              <ul class="list-inline">
-                <li class="list-inline-item">
-                  <a href=""><i class="fa fa-bed"></i> Hotel</a>
-                </li>
-                <li class="list-inline-item">
-                  <a href=""><i class="fa fa-grav"></i> Fitness</a>
-                </li>
-                <li class="list-inline-item">
-                  <a href=""><i class="fa fa-car"></i> Cars</a>
-                </li>
-                <li class="list-inline-item">
-                  <a href=""><i class="fa fa-cutlery"></i> Restaurants</a>
-                </li>
-                <li class="list-inline-item">
-                  <a href=""><i class="fa fa-coffee"></i> Cafe</a>
-                </li>
-              </ul>
-            </div>
-
-          </div>
           <!-- Advance Search -->
           <div class="advance-search">
-            <form action="#">
-              <div class="row">
-                <!-- Store Search -->
-                <div class="col-lg-6 col-md-12">
-                  <div class="block d-flex">
-                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store">
-                  </div>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <input type="text" class="form-control" id="inputtext4" placeholder="What are you looking for">
                 </div>
-                <div class="col-lg-6 col-md-12">
-                  <div class="block d-flex">
-                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store">
-                    <!-- Search Button -->
-                    <button class="btn btn-main">SEARCH</button>
-                  </div>
+                <div class="form-group col-md-3">
+                  <input type="text" class="form-control" id="inputCategory4" placeholder="Category">
+                </div>
+                <div class="form-group col-md-3">
+                  <input type="text" class="form-control" id="inputLocation4" placeholder="Location">
+                </div>
+                <div class="form-group col-md-2">
+
+                  <button type="submit" class="btn btn-primary">Search Now</button>
                 </div>
               </div>
             </form>
-
           </div>
-
         </div>
       </div>
     </div>
-    <!-- Container End -->
   </section>
 
-  <!--===================================
-=            Client Slider            =
-====================================-->
-  <?php echo $this->include('Web/Layout/_session_messages'); ?>
+  <?php echo $this->include('Dashboard/Layout/_session_messages'); ?>
 
   <?php echo $this->renderSection('content'); ?>
+
 
   <!--============================
 =            Footer            =
 =============================-->
-  <?php echo $this->include('Web/Layout/_footer'); ?>
+  <?php echo $this->include('Dashboard/Layout/_footer_main'); ?>
   <?php echo $this->renderSection('scripts'); ?>
 </body>
 
