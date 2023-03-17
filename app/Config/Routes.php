@@ -31,7 +31,7 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'HomeController::index', ['as' => 'web.home']);
 
 //Rotas para o manager
 if(file_exists($manager = ROOTPATH . 'routes/manager.php')){
@@ -50,8 +50,8 @@ if(file_exists($api = ROOTPATH . 'routes/api.php')){
 
 ///REMOVER ISSO
 $routes->group('dashboard', ['filter' => 'auth:web'], function ($routes) {
-    $routes->get('/', 'Home::dashboard', ['filter' => 'verified']);
-    $routes->get('confirm', 'Home::confirm', ['filter' => 'confirm']);
+    $routes->get('/', 'HomeController::dashboard', ['filter' => 'verified']);
+    $routes->get('confirm', 'HomeController::confirm', ['filter' => 'confirm']);
 });
 /*
  * --------------------------------------------------------------------
