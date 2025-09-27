@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<ruleset name="MeuProjeto">
+    <description>Regras de código para o projeto seguindo PSR-12</description>
+
+    <!-- Aplica o padrão PSR-12 -->
+    <rule ref="PSR12"/>
+
+    <!-- Verifica se a assinatura das funções está correta -->
+    <rule ref="Squiz.Functions.FunctionDeclaration"/>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration"/>
+
+    <!-- Nomeação de classes: PascalCase -->
+    <rule ref="Squiz.Classes.ValidClassName"/>
+
+    <!-- Estruturas de controle -->
+    <!-- <rule ref="Squiz.ControlStructures.ControlSignature"/>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration"/>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
+    <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/> -->
+
+    <!-- Espaçamentos -->
+    <!-- <rule ref="Squiz.WhiteSpace.CastSpacing"/> -->
+    <!-- <rule ref="Squiz.WhiteSpace.ControlStructureSpacing"/>
+    <rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
+    <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/> -->
+
+    <!-- Garante que as chaves de classes e funções estejam fechando corretamente -->
+    <rule ref="Squiz.Scope.MethodScope"/>
+
+    <!-- Configuração do limite de linhas -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="180"/>
+            <property name="absoluteLineLimit" value="180"/>
+        </properties>
+    </rule>
+
+    <!-- Exigir uma nova linha no final do arquivo -->
+    <rule ref="Generic.Files.EndFileNewline"/>
+</ruleset>

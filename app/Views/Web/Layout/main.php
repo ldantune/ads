@@ -12,10 +12,7 @@
   <title><?php echo $this->renderSection('title'); ?> <?php echo ' - ' . env('APP_NAME') ?> </title>
 
   <!-- PLUGINS CSS STYLE -->
-  <!--
-  <link href="<?php //echo site_url('dashboard/'); 
-              ?>plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-  -->
+  <link href="<?php echo site_url('web/'); ?>plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
   <!-- Bootstrap -->
   <link href="<?php echo site_url('web/'); ?>plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -31,15 +28,9 @@
   <link href="<?php echo site_url('web/'); ?>css/style.css" rel="stylesheet">
 
   <!-- FAVICON -->
-  <link href="<?php echo site_url('dashboard/'); ?><?php echo site_url('web/'); ?>img/favicon.png" rel="shortcut icon">
+  <link href="<?php echo site_url('web/'); ?>img/favicon.png" rel="shortcut icon">
 
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
   <?php echo $this->renderSection('styles'); ?>
 </head>
 
@@ -54,7 +45,8 @@
             <a class="navbar-brand" href="index.html">
               <img src="<?php echo site_url('web/'); ?>images/logo.png" alt="">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -66,7 +58,6 @@
                   <a class="nav-link" href="<?php echo route_to('pricing') ?>">Nossos planos</a>
                 </li>
                 <?php if (auth()->check()) : ?>
-
                   <?php if (!auth()->user()->isSuperadmin()) : ?>
                     <li class="nav-item">
                       <a class="nav-link" href="<?php echo route_to('dashboard') ?>">Dashboard</a>
