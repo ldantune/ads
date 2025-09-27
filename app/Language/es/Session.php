@@ -11,12 +11,12 @@
 
 // Session language settings
 return [
-    'missingDatabaseTable'   => '`sessionSavePath` debe tener un nombre de tabla para que funcione el manejador de sesión de la base de datos.',
-    'invalidSavePath'        => 'Sesión: La ruta de guardado configurada "{0}" no es un directorio, no existe o no puede ser creada.',
-    'writeProtectedSavePath' => 'Sesión: La ruta de guardado configurada "{0}" no es escribible por el proceso de PHP.',
-    'emptySavePath'          => 'Sesión: No se ha configurado una ruta de guardado.',
-    'invalidSavePathFormat'  => 'Sesión: Formato de ruta de guardado de Redis no válido: {0}',
+    'missingDatabaseTable'   => '`sessionSavePath` debe tener un nombre de tabla para que funcione el manejador de sesiÃƒÂ³n de la base de datos.',
+    'invalidSavePath'        => 'SesiÃƒÂ³n: La ruta de guardado configurada "{0}" no es un directorio, no existe o no puede ser creada.',
+    'writeProtectedSavePath' => 'SesiÃƒÂ³n: La ruta de guardado configurada "{0}" no es escribible por el proceso de PHP.',
+    'emptySavePath'          => 'SesiÃƒÂ³n: No se ha configurado una ruta de guardado.',
+    'invalidSavePathFormat'  => 'SesiÃƒÂ³n: Formato de ruta de guardado de Redis no vÃƒÂ¡lido: {0}',
 
     // @deprecated
-    'invalidSameSiteSetting' => 'Sesión: La configuración de SameSite debe ser None, Lax, Strict o una cadena en blanco. Dado: {0}', // 'Session: The SameSite setting must be None, Lax, Strict, or a blank string. Given: {0}',
+    'invalidSameSiteSetting' => 'SesiÃƒÂ³n: La configuraciÃƒÂ³n de SameSite debe ser None, Lax, Strict o una cadena en blanco. Dado: {0}', // 'Session: The SameSite setting must be None, Lax, Strict, or a blank string. Given: {0}',
 ];

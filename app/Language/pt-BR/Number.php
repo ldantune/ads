@@ -19,8 +19,8 @@ return [
 
     // don't forget the space in front of these!
     'thousand'    => ' mil',
-    'million'     => ' milhão',
-    'billion'     => ' bilhão',
-    'trillion'    => ' trilhão',
-    'quadrillion' => ' quatrilhão',
+    'million'     => ' milhÃƒÂ£o',
+    'billion'     => ' bilhÃƒÂ£o',
+    'trillion'    => ' trilhÃƒÂ£o',
+    'quadrillion' => ' quatrilhÃƒÂ£o',
 ];

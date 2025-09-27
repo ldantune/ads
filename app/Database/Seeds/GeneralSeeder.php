@@ -8,7 +8,7 @@ class GeneralSeeder extends Seeder
 {
     public function run()
     {
-        $this->call(SuperadminSeeder::class);
+        $this->call(SuperAdminSeeder::class);
         $this->call(PlanSeeder::class);
     }
 }

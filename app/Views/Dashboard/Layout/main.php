@@ -99,8 +99,8 @@
                   <!-- Dropdown list -->
                   <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="<?php echo $urls->url_en ?>">English</a>
-                    <a class="dropdown-item" href="<?php echo $urls->url_es ?>">Españhol</a>
-                    <a class="dropdown-item" href="<?php echo $urls->url_pt_br ?>">Português Brasil</a>
+                    <a class="dropdown-item" href="<?php echo $urls->url_es ?>">EspaÃƒÂ±hol</a>
+                    <a class="dropdown-item" href="<?php echo $urls->url_pt_br ?>">PortuguÃƒÂªs Brasil</a>
                   </div>
                 </li>
               </ul>
@@ -114,7 +114,7 @@
                   </li>
                 <?php endif; ?>
                 <li class="nav-item">
-                  <a class="nav-link add-button" href="<?php echo route_to('dashboard') ?>"><i class="fa fa-plus-circle"></i> Criar anúncio</a>
+                  <a class="nav-link add-button" href="<?php echo route_to('dashboard') ?>"><i class="fa fa-plus-circle"></i> Criar anÃƒÂºncio</a>
                 </li>
               </ul>
             </div>

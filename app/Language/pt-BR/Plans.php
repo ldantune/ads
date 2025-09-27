@@ -1,6 +1,6 @@
 <?php
 
-// Para a view show, o aluno poderá aplicar os conhecimentos.... fica o desafio
+// Para a view show, o aluno poderÃƒÂ¡ aplicar os conhecimentos.... fica o desafio
 // Farei apenas para index e form
 
 return [
@@ -12,9 +12,9 @@ return [
     'text_quarterly'                => 'Trimestral',
     'text_semester'                 => 'Semestral',
     'text_yearly'                   => 'Anual',
-    'text_info_adverts'             => 'Nº de Anúncios que o usuário poderá cadastrar. Deixe em branco para ilimitado',
+    'text_info_adverts'             => 'NÃ‚Âº de AnÃƒÂºncios que o usuÃƒÂ¡rio poderÃƒÂ¡ cadastrar. Deixe em branco para ilimitado',
     'text_is_highlighted'           => 'Destacado para compra',
-    'text_no_highlighted'           => 'Não destacado para compra',
+    'text_no_highlighted'           => 'NÃƒÂ£o destacado para compra',
     'text_unlimited_adverts'        => 'Ilimitado',
 
 
@@ -23,17 +23,17 @@ return [
 
 
     // Table view
-    'table_header_code'     => 'Código',
+    'table_header_code'     => 'CÃƒÂ³digo',
     'table_header_plan'     => 'Plano',
     'table_header_details'  => 'Detalhes',
 
     // Labels
     'label_name'            => 'Nome do Plano',
-    'label_code'            => 'Códido do Plano',
-    'label_recorrence'      => 'Tipo de recorrência',
-    'label_adverts'         => 'Nº de Anúncios permitidos',
+    'label_code'            => 'CÃƒÂ³dido do Plano',
+    'label_recorrence'      => 'Tipo de recorrÃƒÂªncia',
+    'label_adverts'         => 'NÃ‚Âº de AnÃƒÂºncios permitidos',
     'label_value'           => 'Valor do plano',
-    'label_description'     => 'Descrição do plano',
+    'label_description'     => 'DescriÃƒÂ§ÃƒÂ£o do plano',
     'label_view'            => 'Visualizar',
     'label_details'         => 'Detalhes',
     'label_is_highlighted'  => 'Plano Destacado para Compra',
@@ -41,19 +41,19 @@ return [
 
     // Validation messages
     'name'        => [
-        'required' => 'O nome do plano é obrigatório',
-        'min_length' => 'Informe pelo menos 3 carectéres no tamanho',
-        'max_length' => 'Informe no máximo 90 carectéres no tamanho',
-        'is_unique' => 'Esse plano já existe',
+        'required' => 'O nome do plano ÃƒÂ© obrigatÃƒÂ³rio',
+        'min_length' => 'Informe pelo menos 3 carectÃƒÂ©res no tamanho',
+        'max_length' => 'Informe no mÃƒÂ¡ximo 90 carectÃƒÂ©res no tamanho',
+        'is_unique' => 'Esse plano jÃƒÂ¡ existe',
     ],
     'recorrence'        => [
-        'required' => 'A recorrência do plano é obrigatório',
-        'in_list' => 'Por favor escolha uma das opções: Mensal, Trimestral, Semestral ou Anual',
+        'required' => 'A recorrÃƒÂªncia do plano ÃƒÂ© obrigatÃƒÂ³rio',
+        'in_list' => 'Por favor escolha uma das opÃƒÂ§ÃƒÂµes: Mensal, Trimestral, Semestral ou Anual',
     ],
     'value'        => [
-        'required' => 'O valor do plano é obrigatório',
+        'required' => 'O valor do plano ÃƒÂ© obrigatÃƒÂ³rio',
     ],
     'description'        => [
-        'required' => 'A descrição do plano é obrigatório',
+        'required' => 'A descriÃƒÂ§ÃƒÂ£o do plano ÃƒÂ© obrigatÃƒÂ³rio',
     ],
 ];

@@ -11,11 +11,11 @@
 
 // CLI language settings
 return [
-    'altCommandPlural'   => 'Você quis dizer um desses?',
-    'altCommandSingular' => 'Você quis dizer isso?',
-    'commandNotFound'    => 'Comando "{0}" não foi encontrado.',
+    'altCommandPlural'   => 'VocÃƒÂª quis dizer um desses?',
+    'altCommandSingular' => 'VocÃƒÂª quis dizer isso?',
+    'commandNotFound'    => 'Comando "{0}" nÃƒÂ£o foi encontrado.',
     'generator'          => [
-        'cancelOperation'  => 'Operação foi cancelada.',
+        'cancelOperation'  => 'OperaÃƒÂ§ÃƒÂ£o foi cancelada.',
         'className'        => 'Nome da classe',
         'commandType'      => 'Tipo de comando',
         'databaseGroup'    => 'Grupo do banco de dados',
@@ -26,12 +26,12 @@ return [
         'parentClass'      => 'Classe pai',
         'returnType'       => 'Tipo de retorno',
         'tableName'        => 'Nome da tabela',
-        'usingCINamespace' => 'Atenção: Usar o namespace "CodeIgniter" irá gerar o arquivo no diretório system.',
+        'usingCINamespace' => 'AtenÃƒÂ§ÃƒÂ£o: Usar o namespace "CodeIgniter" irÃƒÂ¡ gerar o arquivo no diretÃƒÂ³rio system.',
     ],
     'helpArguments'       => 'Argumentos:',
-    'helpDescription'     => 'Descrição:',
-    'helpOptions'         => 'Opções:',
+    'helpDescription'     => 'DescriÃƒÂ§ÃƒÂ£o:',
+    'helpOptions'         => 'OpÃƒÂ§ÃƒÂµes:',
     'helpUsage'           => 'Uso:',
-    'invalidColor'        => 'Cor de {0} inválida: {1}.',
-    'namespaceNotDefined' => 'Namespace "{0}" não está definido.',
+    'invalidColor'        => 'Cor de {0} invÃƒÂ¡lida: {1}.',
+    'namespaceNotDefined' => 'Namespace "{0}" nÃƒÂ£o estÃƒÂ¡ definido.',
 ];

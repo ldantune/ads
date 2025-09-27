@@ -11,10 +11,10 @@
 
 // Core language settings
 return [
-    'copyError'                    => 'Um erro foi encontrado ao tentar substituir o arquivo. Por favor, certifique-se de que seu diretório de arquivos é gravável.',
-    'enabledZlibOutputCompression' => 'Sua diretiva zlib.output_compression ini está on. Isso não irá trabalhar bem com a saída de buffers.',
-    'invalidFile'                  => 'Arquivo inválido: {0}',
-    'invalidPhpVersion'            => 'Sua versão do PHP deve ser {0} ou maior para rodar CodeIgniter. Versão atual: {1}',
-    'missingExtension'             => 'A extensão {0} não está carregada.',
+    'copyError'                    => 'Um erro foi encontrado ao tentar substituir o arquivo. Por favor, certifique-se de que seu diretÃƒÂ³rio de arquivos ÃƒÂ© gravÃƒÂ¡vel.',
+    'enabledZlibOutputCompression' => 'Sua diretiva zlib.output_compression ini estÃƒÂ¡ on. Isso nÃƒÂ£o irÃƒÂ¡ trabalhar bem com a saÃƒÂ­da de buffers.',
+    'invalidFile'                  => 'Arquivo invÃƒÂ¡lido: {0}',
+    'invalidPhpVersion'            => 'Sua versÃƒÂ£o do PHP deve ser {0} ou maior para rodar CodeIgniter. VersÃƒÂ£o atual: {1}',
+    'missingExtension'             => 'A extensÃƒÂ£o {0} nÃƒÂ£o estÃƒÂ¡ carregada.',
     'noHandlers'                   => '{0} deve prover pelo menos um Handler.',
 ];

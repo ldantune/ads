@@ -11,13 +11,13 @@
 
 // Pager language settings
 return [
-    'pageNavigation'         => 'Navegação de páginas',
+    'pageNavigation'         => 'NavegaÃƒÂ§ÃƒÂ£o de pÃƒÂ¡ginas',
     'first'                  => 'Primeira',
     'previous'               => 'Anterior',
-    'next'                   => 'Próxima',
-    'last'                   => 'Última',
+    'next'                   => 'PrÃƒÂ³xima',
+    'last'                   => 'ÃƒÅ¡ltima',
     'older'                  => 'Mais antiga',
     'newer'                  => 'Mais recente',
-    'invalidTemplate'        => '{0} não é um Pager template válido.',
-    'invalidPaginationGroup' => '{0} não é um grupo de Paginação válido.',
+    'invalidTemplate'        => '{0} nÃƒÂ£o ÃƒÂ© um Pager template vÃƒÂ¡lido.',
+    'invalidPaginationGroup' => '{0} nÃƒÂ£o ÃƒÂ© um grupo de PaginaÃƒÂ§ÃƒÂ£o vÃƒÂ¡lido.',
 ];

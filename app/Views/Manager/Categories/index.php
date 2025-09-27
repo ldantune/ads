@@ -24,7 +24,7 @@
 
       <div class="card-body">
 
-      <a class="btn btn-info btn-sm mt-2 mb-4" href="<?php echo route_to('categories.archived');?>"><?php echo lang('App.btn_archived'); ?></a>
+        <a class="btn btn-info btn-sm mt-2 mb-4" href="<?php echo route_to('categories.archived'); ?>"><?php echo lang('App.btn_archived'); ?></a>
         <table class="table table" id="dataTable">
           <thead>
             <tr>
@@ -52,7 +52,7 @@
 
       <?php echo form_open(route_to('categories.create'), ['id' => 'categories-form'], ['id' => '']) ?>
       <div class="modal-body">
-        
+
         <div class="mb-3">
           <label for="name" class="form-label"><?php echo lang('Categories.label_name'); ?></label>
           <input type="text" class="form-control" id="name" name="name">
@@ -88,7 +88,7 @@
 <?php echo $this->include('Manager/Categories/Scripts/_archive_category'); ?>
 
 <script>
-  function refreshCSRFToken(token){
+  function refreshCSRFToken(token) {
     $('[name="<?php echo csrf_token(); ?>"]').val(token);
     $('meta[name="<?php echo csrf_token(); ?>"]').attr('content', token);
   }

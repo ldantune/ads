@@ -11,11 +11,11 @@
 
 // CLI language settings
 return [
-    'altCommandPlural'   => '¿Te refieres a uno de estos?', // Did you mean one of these?',
-    'altCommandSingular' => '¿Te refieres a esto?', // 'Did you mean this?',
+    'altCommandPlural'   => 'Ã‚Â¿Te refieres a uno de estos?', // Did you mean one of these?',
+    'altCommandSingular' => 'Ã‚Â¿Te refieres a esto?', // 'Did you mean this?',
     'commandNotFound'    => 'Comando "{0}" no encontrado.', // 'Command "{0}" not found.',
     'generator'          => [
-        'cancelOperation' => 'La operación ha sido cancelada.', // 'Operation has been cancelled.',
+        'cancelOperation' => 'La operaciÃƒÂ³n ha sido cancelada.', // 'Operation has been cancelled.',
         'className'       => [
             'command'    => 'Nombre de la clase Command', // 'Command class name',
             'config'     => 'Nombre de la clase Config', // 'Config class name',
@@ -37,12 +37,12 @@ return [
         'parentClass'      => 'Clase padre', // 'Parent class',
         'returnType'       => 'Tipo de retorno', // 'Return type',
         'tableName'        => 'Nombre de la tabla', // 'Table name',
-        'usingCINamespace' => 'Advertencia: El uso del espacio de nombres "CodeIgniter" generará el archivo en el directorio del sistema.', // 'Warning: Using the "CodeIgniter" namespace will generate the file in the system directory.'
+        'usingCINamespace' => 'Advertencia: El uso del espacio de nombres "CodeIgniter" generarÃƒÂ¡ el archivo en el directorio del sistema.', // 'Warning: Using the "CodeIgniter" namespace will generate the file in the system directory.'
     ],
     'helpArguments'       => 'Argumentos:', // 'Arguments:',
-    'helpDescription'     => 'Descripción:', // 'Description:',
+    'helpDescription'     => 'DescripciÃƒÂ³n:', // 'Description:',
     'helpOptions'         => 'Opciones:', // 'Options:',
     'helpUsage'           => 'Uso:', // 'Usage:',
-    'invalidColor'        => 'Inválido {0} color: {1}.', // 'Invalid {0} color: {1}.',
-    'namespaceNotDefined' => 'El espacio de nombres "{0}" no está definido', // 'Namespace "{0}" is not defined.',
+    'invalidColor'        => 'InvÃƒÂ¡lido {0} color: {1}.', // 'Invalid {0} color: {1}.',
+    'namespaceNotDefined' => 'El espacio de nombres "{0}" no estÃƒÂ¡ definido', // 'Namespace "{0}" is not defined.',
 ];

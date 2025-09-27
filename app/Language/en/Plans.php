@@ -1,6 +1,6 @@
 <?php
 
-// Para a view show, o aluno poderá aplicar os conhecimentos.... fica o desafio
+// Para a view show, o aluno poderÃƒÂ¡ aplicar os conhecimentos.... fica o desafio
 // Farei apenas para index e form
 
 return [

@@ -11,6 +11,6 @@
 
 // Router language settings
 return [
-    'invalidParameter'    => 'Um parâmetro não corresponde ao tipo esperado.',
-    'missingDefaultRoute' => 'Não é possível determinar o que deve ser exibido. Uma rota padrão não foi especificada no arquivo de roteamento.',
+    'invalidParameter'    => 'Um parÃƒÂ¢metro nÃƒÂ£o corresponde ao tipo esperado.',
+    'missingDefaultRoute' => 'NÃƒÂ£o ÃƒÂ© possÃƒÂ­vel determinar o que deve ser exibido. Uma rota padrÃƒÂ£o nÃƒÂ£o foi especificada no arquivo de roteamento.',
 ];

@@ -11,20 +11,20 @@ return [
     'text_quarterly' => 'Trimestral',
     'text_semester' => 'Semestre',
     'text_yearly' => 'Anual',
-    'table_header_code' => 'Código',
+    'table_header_code' => 'CÃƒÂ³digo',
     'table_header_plan' => 'Plan',
     'table_header_details' => 'Detalles',
-    'text_info_adverts' => 'Número de anuncios que el usuario puede registrar. Dejar en blanco para que sea ilimitado',
+    'text_info_adverts' => 'NÃƒÂºmero de anuncios que el usuario puede registrar. Dejar en blanco para que sea ilimitado',
     'text_is_highlighted' => 'Destacado para comprar',
     'text_no_highlighted' => 'No resaltado para la compra',
 
     // Labels
     'label_name' => 'Nombre del plan',
-    'label_code' => 'Código del plan',
+    'label_code' => 'CÃƒÂ³digo del plan',
     'label_recorrence' => 'Tipo de recurrencia',
-    'label_adverts' => 'Número de anuncios permitidos',
+    'label_adverts' => 'NÃƒÂºmero de anuncios permitidos',
     'label_value' => 'Valor del plan',
-    'label_description' => 'Descripción del plan',
+    'label_description' => 'DescripciÃƒÂ³n del plan',
     'label_view' => 'Ver',
     'label_details' => 'Detalles',
     'label_is_highlighted' => 'Resaltar plan en Inicio',
@@ -36,7 +36,7 @@ return [
     'name'        => [
         'required' => 'El nombre del plan es obligatorio',
         'min_length' => 'Ingrese al menos 3 caracteres en la longitud',
-        'max_length' => 'Ingrese un máximo de 90 caracteres de longitud',
+        'max_length' => 'Ingrese un mÃƒÂ¡ximo de 90 caracteres de longitud',
         'is_unique' => 'Este plan ya existe',
     ],
     'recorrence'        => [
@@ -47,6 +47,6 @@ return [
         'required' => 'El valor del plan es obligatorio',
     ],
     'description'        => [
-        'required' => 'Se requiere la descripción del plan',
+        'required' => 'Se requiere la descripciÃƒÂ³n del plan',
     ],
 ];

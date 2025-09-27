@@ -11,10 +11,10 @@
 
 // View language settings
 return [
-    'invalidCellMethod'     => '{class}::{method} não é um método válido.',
-    'missingCellParameters' => '{class}::{method} não possui parâmetros.',
-    'invalidCellParameter'  => '{0} não é um nome de parâmetro válido.',
+    'invalidCellMethod'     => '{class}::{method} nÃƒÂ£o ÃƒÂ© um mÃƒÂ©todo vÃƒÂ¡lido.',
+    'missingCellParameters' => '{class}::{method} nÃƒÂ£o possui parÃƒÂ¢metros.',
+    'invalidCellParameter'  => '{0} nÃƒÂ£o ÃƒÂ© um nome de parÃƒÂ¢metro vÃƒÂ¡lido.',
     'noCellClass'           => 'Nenhuma classe de view cell fornecida.',
-    'invalidCellClass'      => 'Não é possível localizar a classe view cell: {0}.',
-    'tagSyntaxError'        => 'Você tem um erro de sintaxe nas tags do Parser: {0}',
+    'invalidCellClass'      => 'NÃƒÂ£o ÃƒÂ© possÃƒÂ­vel localizar a classe view cell: {0}.',
+    'tagSyntaxError'        => 'VocÃƒÂª tem um erro de sintaxe nas tags do Parser: {0}',
 ];

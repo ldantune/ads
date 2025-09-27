@@ -15,7 +15,7 @@ class PlanSeeder extends Seeder
 
             $planModel = Factories::models(PlanModel::class);
 
-            foreach(self::plans() as $plan){
+            foreach (self::plans() as $plan) {
                 $planModel->insert($plan);
             }
 
@@ -46,7 +46,7 @@ class PlanSeeder extends Seeder
                 "name" => "Plano Trimestral",
                 "recorrence" =>  "quarterly",
                 "adverts" => 20,
-                "description" => "Criação de plano trimestral",
+                "description" => "CriaÃƒÂ§ÃƒÂ£o de plano trimestral",
                 "value" => 89.90,
                 "is_highlighted" => 1
             ],

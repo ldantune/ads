@@ -9,7 +9,7 @@ class DashboardController extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Anúncios recentes',
+            'title' => 'AnÃƒÂºncios recentes',
         ];
         return view('Dashboard/Home/index', $data);
     }

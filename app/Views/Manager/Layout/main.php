@@ -49,8 +49,8 @@
                                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $language ?></a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="<?php echo $urls->url_en ?>">English</a>
-                                    <a class="dropdown-item" href="<?php echo $urls->url_es ?>">Españhol</a>
-                                    <a class="dropdown-item" href="<?php echo $urls->url_pt_br ?>">Português Brasil</a>
+                                    <a class="dropdown-item" href="<?php echo $urls->url_es ?>">EspaÃƒÂ±hol</a>
+                                    <a class="dropdown-item" href="<?php echo $urls->url_pt_br ?>">PortuguÃƒÂªs Brasil</a>
 
                                 </div>
                             </li>

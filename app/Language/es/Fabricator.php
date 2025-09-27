@@ -11,7 +11,7 @@
 
 // Fabricator language settings
 return [
-    'invalidModel'      => 'Suministrado Modelo inválido para fabricación.', // 'Invalid model supplied for fabrication.',
-    'missingFormatters' => 'No se han definido formateadores válidos.', // 'No valid formatters defined.',
+    'invalidModel'      => 'Suministrado Modelo invÃƒÂ¡lido para fabricaciÃƒÂ³n.', // 'Invalid model supplied for fabrication.',
+    'missingFormatters' => 'No se han definido formateadores vÃƒÂ¡lidos.', // 'No valid formatters defined.',
     'createFailed'      => 'El fabricante no pudo insertar en la tabla {0}: {1}', // 'Fabricator failed to insert on table {0}: {1}',
 ];

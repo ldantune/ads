@@ -32,7 +32,7 @@ class GerencianetService
     $this->options = [
       'client_id' => env('GERENCIANET_CLIENT_ID'),
       'client_secret' => env('GERENCIANET_CLIENT_SECRET'),
-      'sandbox' => env('GERENCIANET_SANDBOX'), // altere conforme o ambiente (true = Homologação e false = producao)
+      'sandbox' => env('GERENCIANET_SANDBOX'), // altere conforme o ambiente (true = HomologaÃƒÂ§ÃƒÂ£o e false = producao)
       'time' => env('GERENCIANET_TIMEOUT')
     ];
   }

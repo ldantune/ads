@@ -11,9 +11,9 @@
 
 // View language settings
 return [
-    'invalidCellMethod'     => '{class}::{method} no es un método válido.',
-    'missingCellParameters' => '{class}::{method} no tiene parámetros.',
-    'invalidCellParameter'  => '{0} no es un nombre de parámetro válido.',
+    'invalidCellMethod'     => '{class}::{method} no es un mÃƒÂ©todo vÃƒÂ¡lido.',
+    'missingCellParameters' => '{class}::{method} no tiene parÃƒÂ¡metros.',
+    'invalidCellParameter'  => '{0} no es un nombre de parÃƒÂ¡metro vÃƒÂ¡lido.',
     'noCellClass'           => 'No se ha establecido una clase de vista de celda.',
     'invalidCellClass'      => 'No se ha podido localizar la clase de vista de celda: {0}.',
     'tagSyntaxError'        => 'Tiene un error de sintaxis en su analizador de etiquetas: {0}',

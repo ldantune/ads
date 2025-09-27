@@ -29,7 +29,7 @@
               <th scope="col">#</th>
               <th scope="col">Nome</th>
               <th scope="col">Slug</th>
-              <th scope="col">Ações</th>
+              <th scope="col">AÃƒÂ§ÃƒÂµes</th>
             </tr>
           </thead>
 

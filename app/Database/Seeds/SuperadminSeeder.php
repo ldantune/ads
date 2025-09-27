@@ -7,11 +7,11 @@ use App\Models\UserModel;
 use CodeIgniter\Config\Factories;
 use CodeIgniter\Database\Seeder;
 
-class SuperadminSeeder extends Seeder
+class SuperAdminSeeder extends Seeder
 {
     public function run()
     {
-        try{
+        try {
             $this->db->transStart();
 
             $user = new User([
@@ -30,7 +30,7 @@ class SuperadminSeeder extends Seeder
             $this->db->transComplete();
 
             echo "Superadmin criado com sucesso!";
-        } catch (\Exception $e){
+        } catch (\Exception $e) {
             print $e->getMessage();
         }
     }

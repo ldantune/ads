@@ -11,10 +11,10 @@
 
 // Encryption language settings
 return [
-    'noDriverRequested'    => 'Nenhum driver solicitado; Miss Daisy vai ficar tão chateada!',
-    'noHandlerAvailable'   => 'Não foi possível encontrar um manipulador de criptografia {0} disponível.',
-    'unKnownHandler'       => '"{0}" não pode ser configurado.',
+    'noDriverRequested'    => 'Nenhum driver solicitado; Miss Daisy vai ficar tÃƒÂ£o chateada!',
+    'noHandlerAvailable'   => 'NÃƒÂ£o foi possÃƒÂ­vel encontrar um manipulador de criptografia {0} disponÃƒÂ­vel.',
+    'unKnownHandler'       => '"{0}" nÃƒÂ£o pode ser configurado.',
     'starterKeyNeeded'     => 'O criptografador precisa de uma chave inicial.',
-    'authenticationFailed' => 'Descriptografando: autenticação falhou.',
+    'authenticationFailed' => 'Descriptografando: autenticaÃƒÂ§ÃƒÂ£o falhou.',
     'encryptionFailed'     => 'Criptografia falhou.',
 ];

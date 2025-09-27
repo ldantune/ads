@@ -10,7 +10,7 @@
 <?php if (session()->has('info')) : ?>
 
 <div class="alert alert-info alert-dismissible fade show" role="alert">
-  <strong>Informação!</strong> <?php echo session('info'); ?>
+  <strong>InformaÃƒÂ§ÃƒÂ£o!</strong> <?php echo session('info'); ?>
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
@@ -19,7 +19,7 @@
 <?php if (session()->has('danger')) : ?>
 
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>Atenção!</strong> <?php echo session('danger'); ?>
+  <strong>AtenÃƒÂ§ÃƒÂ£o!</strong> <?php echo session('danger'); ?>
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
@@ -28,7 +28,7 @@
 <?php if (session()->has('error')) : ?>
 
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>Atenção!</strong> <?php echo session('error'); ?>
+  <strong>AtenÃƒÂ§ÃƒÂ£o!</strong> <?php echo session('error'); ?>
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
@@ -46,4 +46,3 @@
 </ul>
 
 <?php endif; ?>
-

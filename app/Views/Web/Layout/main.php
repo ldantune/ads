@@ -117,7 +117,7 @@
                   </li>
                 <?php endif; ?>
                 <li class="nav-item">
-                  <a class="nav-link add-button" href="<?php echo route_to('dashboard') ?>"><i class="fa fa-plus-circle"></i> Criar anúncio</a>
+                  <a class="nav-link add-button" href="<?php echo route_to('dashboard') ?>"><i class="fa fa-plus-circle"></i> Criar anÃƒÂºncio</a>
                 </li>
               </ul>
             </div>

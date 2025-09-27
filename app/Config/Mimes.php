@@ -13,7 +13,7 @@ namespace Config;
  * methods. The same applies when more than one mime-type exists for a
  * single extension.
  *
- * When working with mime types, please make sure you have the ´fileinfo´
+ * When working with mime types, please make sure you have the Ã‚Â´fileinfoÃ‚Â´
  * extension enabled to reliably detect the media types.
  */
 class Mimes
