@@ -48,12 +48,12 @@ class AuthFilter extends AuthenticationFilter implements FilterInterface
 
     protected function authenticate($request, $guards)
     {
-        if(empty($guards)){
+        if (empty($guards)) {
             $guards = [null];
         }
 
-        foreach($guards as $guard){
-            if($this->auth->guard($guard)->check()){
+        foreach ($guards as $guard) {
+            if ($this->auth->guard($guard)->check()) {
                 return $this->auth->shouldUse($guard);
             }
 

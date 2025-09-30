@@ -2,7 +2,7 @@
 
 namespace App\Requests;
 
-class CategoryRequest extends MyBaseRequest
+class AdvertRequest extends MyBaseRequest
 {
     public function validateBeforeSave(string $ruleGroup, bool $respondWithRedirect = false)
     {

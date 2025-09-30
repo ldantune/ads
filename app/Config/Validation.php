@@ -86,4 +86,68 @@ class Validation extends BaseConfig
             'required'      => 'Plans.recorrence.required',
         ]
     ];
+
+    // --------------------------------------------------------------------
+    // Adverts
+    // --------------------------------------------------------------------
+    public $advert = [
+        'title'         => 'required|min_length[5]|max_length[120]|is_unique[adverts.title,id,{id}]',
+        'situation'     => 'required|in_list[new,used]',
+        'category_id'   => 'required|is_not_unique[categories.id,id,{category_id}]',
+        'price'         => 'required',
+        'description'   => 'required|min_length[10]|max_length[5000]',
+        'zipcode'       => 'required|exact_length[9]',
+        'street'        => 'required|min_length[3]|max_length[120]',
+        'neighborhood'   => 'required|min_length[3]|max_length[140]',
+        'city'          => 'required|min_length[3]|max_length[120]',
+        'state'         => 'required|exact_length[2]'
+    ];
+
+    public $advert_errors = [
+        'title' => [
+            'required'      => 'Adverts.title.required',
+            'min_length'    => 'Adverts.title.min_length',
+            'max_length'    => 'Adverts.title.max_length',
+            'is_unique'     => 'Adverts.title.is_unique',
+        ],
+        'situation' => [
+            'required'      => 'Adverts.situation.required',
+            'in_list'    => 'Adverts.situation.in_list',
+        ],
+        'category_id' => [
+            'required'      => 'Adverts.category_id.required',
+            'is_not_unique'    => 'Adverts.category_id.is_not_unique',
+        ],
+        'price' => [
+            'required'      => 'Adverts.price.required',
+        ],
+        'description' => [
+            'required'      => 'Adverts.description.required',
+            'min_length'    => 'Adverts.description.min_length',
+            'max_length'    => 'Adverts.description.max_length',
+        ],
+        'zipcode' => [
+            'required'      => 'Adverts.zipcode.required',
+            'exact_length'  => 'Adverts.zipcode.exact_length',
+        ],
+        'street' => [
+            'required'      => 'Adverts.street.required',
+            'min_length'    => 'Adverts.street.min_length',
+            'max_length'    => 'Adverts.street.max_length',
+        ],
+        'neighborhood' => [
+            'required'      => 'Adverts.neighborhood.required',
+            'min_length'    => 'Adverts.neighborhood.min_length',
+            'max_length'    => 'Adverts.neighborhood.max_length',
+        ],
+        'city' => [
+            'required'      => 'Adverts.city.required',
+            'min_length'    => 'Adverts.city.min_length',
+            'max_length'    => 'Adverts.city.max_length',
+        ],
+        'state' => [
+            'required'      => 'Adverts.state.required',
+            'exact_length'  => 'Adverts.state.exact_length',
+        ],
+    ];
 }

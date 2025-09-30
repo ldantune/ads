@@ -25,8 +25,7 @@ class SuperadminFilter implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        if(!auth()->user()->isSuperadmin()){
-
+        if (!auth()->user()->isSuperadmin()) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
     }

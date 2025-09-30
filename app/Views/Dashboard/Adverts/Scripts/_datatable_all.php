@@ -1,21 +1,31 @@
 <script>
   $(document).ready(function() {
     $('#dataTable').DataTable({
+      "pagingType": "full_numbers",
       "order": [],
       "deferRender": true,
       "responsive": true,
       "language": {
         processing: '<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>',
       },
-      ajax: '<?php echo route_to('categories.get.all'); ?>',
+      ajax: '<?php echo route_to('get.all.my.adverts'); ?>',
       columns: [{
-          data: 'id'
+          data: 'image'
         },
         {
-          data: 'name'
+          data: 'code'
         },
         {
-          data: 'slug'
+          data: 'title'
+        },
+        {
+          data: 'category'
+        },
+        {
+          data: 'is_published'
+        },
+        {
+          data: 'address'
         },
         {
           data: 'actions'

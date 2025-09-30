@@ -11,6 +11,6 @@
 
 // Security language settings
 return [
-    'disallowedAction' => 'A aÃƒÂ§ÃƒÂ£o que vocÃƒÂª requisitou nÃƒÂ£o ÃƒÂ© permitida.',
+    'disallowedAction' => 'A ação que você requisitou não é permitida.',
     'invalidSameSite'  => 'O valor de SameSite deve ser None, Lax, Strict, ou uma string vazia. Dado: {0}',
 ];

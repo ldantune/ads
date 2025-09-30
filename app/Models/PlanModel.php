@@ -35,7 +35,4 @@ class PlanModel extends MyBaseModel
     protected $allowCallbacks = true;
     protected $beforeInsert   = ['escapeDataXSS'];
     protected $beforeUpdate   = ['escapeDataXSS'];
-
-    
-
 }

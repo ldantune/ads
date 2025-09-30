@@ -51,7 +51,7 @@ class AdvertModel extends MyBaseModel
     // Callbacks
     protected $allowCallbacks = true;
     protected $beforeInsert   = ['escapeDataXSS', 'generateCitySlug', 'generateCode', 'setUserId'];
-    protected $beforeUpdate   = ['escapeDataXSS', 'generateCitySlug'];
+    protected $beforeUpdate   = ['escapeDataXSS', 'generateCitySlug', 'unPublish'];
 
     protected function generateCitySlug(array $data): array
     {
@@ -75,5 +75,103 @@ class AdvertModel extends MyBaseModel
             $data['data']['user_id'] = $this->user->id;
         }
         return $data;
+    }
+
+    protected function unPublish(array $data): array
+    {
+        if (isset($data['data']['title']) || isset($data['data']['description'])) {
+            $data['data']['is_published'] = false;
+        }
+        return $data;
+    }
+
+    /**
+     * Retorna todos os anúncios do usuário logado ou todos os anúncios se for admin
+     *
+     * @param boolean $onlyDeleted
+     * @return array
+     */
+    public function getAllAdverts(bool $onlyDeleted = false): array
+    {
+        $this->setSQLMode();
+
+        $builder = $this;
+        if ($onlyDeleted) {
+            $builder->onlyDeleted();
+        }
+
+        $tableFields = [
+            'adverts.*',
+            'categories.name AS category',
+            'adverts_images.image AS images',
+        ];
+
+        $builder->select($tableFields);
+
+        if (!$this->user->isSuperAdmin()) {
+            $builder->where('adverts.user_id', $this->user->id);
+        }
+        $builder->join('categories', 'categories.id = adverts.category_id');
+        $builder->join('adverts_images', 'adverts_images.advert_id = adverts.id', 'left');
+        $builder->groupBy('adverts.id');
+        $builder->orderBy('adverts.id', 'DESC');
+
+        return $builder->findAll();
+    }
+
+    /**
+     * Retorna o anúncio de acordo com o ID informado
+     *
+     * @param integer $id
+     * @param boolean $withDeleted
+     * @return object|null
+     */
+    public function getAdvertById(int $id, bool $withDeleted = false)
+    {
+
+        $builder = $this;
+
+        $tableFields = [
+            'adverts.*',
+            'users.email',
+        ];
+
+        $builder->select($tableFields);
+        $builder->withDeleted($withDeleted);
+
+        if (!$this->user->isSuperAdmin()) {
+            $builder->where('adverts.user_id', $this->user->id);
+        }
+
+        $builder->join('users', 'users.id = adverts.user_id');
+        $advert = $builder->find($id);
+
+        if (!is_null($advert)) {
+            $advert->images = $this->getAdvertImages($advert->id);
+        }
+
+        return $advert;
+    }
+
+    public function getAdvertImages(int $advertId): array
+    {
+        return $this->db->table('adverts_images')
+            ->where('advert_id', $advertId)
+            ->get()
+            ->getResult();
+    }
+
+    public function trySaveAdvert(Advert $advert, bool $protect = true)
+    {
+        try {
+            $this->db->transStart();
+
+            $this->protect($protect)->save($advert);
+
+            $this->db->transComplete();
+        } catch (\Exception $e) {
+            log_message('error', '[ERROR] - {exception}', ['exception' => $e]);
+            die('Erro ao salvar anúncio.');
+        }
     }
 }

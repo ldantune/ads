@@ -2,7 +2,7 @@
 
 return [
   // Messages
-  'welcome' => 'OlÃƒÂ¡ {name}, que legal ver vocÃƒÂª por aqui',
+  'welcome' => 'Olá {name}, que legal ver você novamente por aqui',
   'danger_validations' => 'Verifique os erros e tente novamente',
   'success_saved' => 'Dados salvos com sucesso',
   'success_archived' => 'Arquivo com sucesso!',
